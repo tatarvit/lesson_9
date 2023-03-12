@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 4</h1>
+	<p>
+		Дано масив елементів. Вивести на екран елементи, що більші за 100
+	</p>
+	<script>
+		// вводимо дані
+		// вводимо кількість елементів
+		const element = parseInt(prompt('введіть кількість елементів масиву'))
+		// описуємо функцію для створення мaсиву
+		function getArray(minNumber, maxNumber, element) {
+			let array = []
+			for (let i = 0; i < element; i++) {
+				const randomNumber = minNumber + Math.floor(Math.random() * (maxNumber - minNumber + 1))
+				array.push(randomNumber)
+			}
+			return array
+		}
+
+		// виведення масиву
+		let array = getArray(50, 150, element)
+		document.write(`виводимо масив ${array}<br>`)
+		// виводимо елементи, які більше за 100
+		for (let i of array)
+			if (i > 100)
+				document.write(`${i},`)
+	</script>
+
+</body>
+
+</html>

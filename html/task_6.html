@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 6</h1>
+	<p>
+		Дано масив елементів. Усі елементи, які більші за перший елемент помножити на 2
+
+	</p>
+	<script>
+		// вводимо дані
+		// вводимо кількість елементів
+		const element = parseInt(prompt('введіть кількість елементів масиву'))
+		// описуємо функцію для створення мaсиву
+		function getArray(minNumber, maxNumber, element) {
+			let array = []
+			for (let i = 0; i < element; i++) {
+				const randomNumber = minNumber + Math.floor(Math.random() * (maxNumber - minNumber + 1))
+				array.push(randomNumber)
+			}
+			return array
+		}
+
+		// виведення масиву
+		let array = getArray(1, 10, element)
+		document.write(`виводимо масив ${array}<br>`)
+		// виводимо елементи, які задовільняють умову
+		// знайти значення елементів більших за перший
+
+		array.forEach(
+			(element, index, baseArrayRef) => {
+				if (element > baseArrayRef[0])
+					baseArrayRef[index] = baseArrayRef[index] * 2
+			}
+		)
+		document.write(array)
+	</script>
+
+</body>
+
+</html>

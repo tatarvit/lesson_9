@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 10</h1>
+	<p>
+		Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину
+		сплаченого податку у грн.
+	</p>
+	<script>
+		// вводимо дані
+		// вводимо кількість елементів
+		const element = parseInt(prompt('введіть кількість одиниць товару'))
+		// описуємо функцію для створення мaсиву
+		function getArray(minNumber, maxNumber, element) {
+			let array = []
+			for (let i = 0; i < element; i++) {
+				const randomNumber = minNumber + Math.floor(Math.random() * (maxNumber - minNumber + 1))
+				array.push(randomNumber)
+			}
+			return array
+		}
+
+		// виведення масиву
+		let oldArray = getArray(500, 1500, element)
+		document.write(`виводимо масив ${oldArray}<br>`)
+		// формуємо новий масив і визнвчвємо ПДВ
+		let newArray = oldArray.map(element => (element / 6).toFixed(2))
+		document.write(newArray)
+	</script>
+
+</body>
+
+</html>
